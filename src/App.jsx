@@ -8,13 +8,12 @@ function App() {
   const [theme, setTheme] = useState('light')
   return (
 
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
 
-    <div className={`${theme} ${theme === 'dark' ? 'bg-[#121212]' : null } h-[100vh] `}>
-
-      <Header />
-      <Home />
-    </div>
+      <div className={`${theme} ${theme === 'dark' ? 'bg-[#121212]' : null} min-h-[100vh] `}>
+        <Header />
+        <Home />
+      </div>
     </ThemeContext.Provider>
 
   )

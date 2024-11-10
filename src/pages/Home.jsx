@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import GenreList from '../components/GenreList'
-import { getGenreList } from '../services/fetchGenreList'
 
 function Home() {
-    const data = getGenreList()
-    useEffect(() => {
-        console.log(data);
-    })
-
     return (
-        <div className='grid grid-cols-4'>
-            <div className=' bg-red-500 h-full hidden md:block'>
+        <div className='grid grid-cols-4 px-8 '>
+            <div className=' h-full hidden md:block'>
                 <GenreList />
             </div>
             <div className='bg-blue-500 col-span-4 md:col-span-3'>GameList</div>
