@@ -11,7 +11,7 @@ function Banner({ gameBanner }) {
                 <h2 className="text-[24px] text-white font-bold">{gameBanner.name}</h2>
                 <button className="bg-blue-600 text-white px-2 p-1 rounded-lg">Get Now</button>
             </div>
-            <img src={gameBanner.background_image} className="md:h-[320px] w-full object-cover rounded-xl" alt="Banner Image" />
+            <img src={gameBanner.background_image} className="md:h-[350px] aspect-auto w-full object-cover rounded-xl" alt="Banner Image" />
         </div>
     );
 }
