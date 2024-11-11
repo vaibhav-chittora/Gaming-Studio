@@ -1,5 +1,6 @@
 import React from 'react'
 import GenreList from '../components/GenreList'
+import Games from '../components/Games'
 
 function Home() {
     return (
@@ -7,7 +8,9 @@ function Home() {
             <div className=' h-full hidden md:block'>
                 <GenreList />
             </div>
-            <div className='bg-blue-500 col-span-4 md:col-span-3'>GameList</div>
+            <div className='col-span-4 md:col-span-3'>
+                <Games />
+            </div>
 
         </div>
     )
