@@ -48,7 +48,7 @@ function Games() {
                 minimumTouchDrag={50}
                 slidesToSlide={1}
             >
-                {data.map((item, index) => (
+                {data && data.map((item, index) => (
                     <div
                         key={index}
                         className='p-4 mx-2 bg-white dark:bg-[#121212] text-gray-900 dark:text-white rounded-lg shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 hover:shadow-xl transition-transform duration-300 ease-out hover:scale-100'

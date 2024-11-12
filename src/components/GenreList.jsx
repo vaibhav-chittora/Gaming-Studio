@@ -23,7 +23,7 @@ function GenreList({ onGenreSelect, setGenreId }) {
     <div>
       <h2 className="text-[30px] font-bold dark:text-white py-5 px-3">Genre</h2>
 
-      {data.map((item, index) => (
+      {data && data.map((item, index) => (
         <div
           onClick={() => {
             setGenreActiveIndex(index);
