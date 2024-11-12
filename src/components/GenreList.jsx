@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchGenreList } from "../services/fetchGenreList.js";
 
-function GenreList() {
+function GenreList({ onGenreSelect, setGenreId }) {
   const [genreActiveIndex, setGenreActiveIndex] = useState(0);
 
   const { data, isLoading, error, isError } = useQuery({
@@ -10,7 +10,7 @@ function GenreList() {
     queryFn: () => fetchGenreList(),
   });
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   });
   if (isLoading) {
     return <div>Loading...</div>;
@@ -24,12 +24,19 @@ function GenreList() {
       <h2 className="text-[30px] font-bold dark:text-white py-5 px-3">Genre</h2>
 
       {data.map((item, index) => (
-
         <div
-          onClick={() => setGenreActiveIndex(index)}
+          onClick={() => {
+            setGenreActiveIndex(index);
+            console.log("ID in genreList...", item.id);
+            // onGenreSelect(item.id)
+            setGenreId(item.id);
+          }}
           className={`flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-300 p-2 rounded-lg group hover:dark:bg-gray-600 
-            ${genreActiveIndex === index ? "bg-gray-300 dark:bg-gray-600" : null}`}
+          ${genreActiveIndex === index ? "bg-gray-300 dark:bg-gray-600" : null}`}
         >
+          {/* {`item id is - ${item.id}`} */}
+          {/* <div onClick={() => { console.log("Item id is - ", item.id); }}> */}
+
 
           <img
             src={item.image_background}
@@ -43,9 +50,11 @@ function GenreList() {
           >
             {item.name}
           </h3>
+          {/* </div> */}
         </div>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   );
 }
 

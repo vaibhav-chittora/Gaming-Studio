@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 function Banner({ gameBanner }) {
     useEffect(() => {
-        console.log("Game Banner", gameBanner);
+        // console.log("Game Banner", gameBanner);
     });
 
     return (

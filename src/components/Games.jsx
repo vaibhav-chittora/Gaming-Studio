@@ -13,7 +13,7 @@ function Games() {
     });
 
     useEffect(() => {
-        console.log(data);
+        // console.log(data);
     }, [data]);
 
     if (isLoading) {
